@@ -1,0 +1,40 @@
+package com.jonathan.dojosandninjas.services;
+
+import java.util.List;
+
+
+import org.springframework.stereotype.Service;
+
+import com.jonathan.dojosandninjas.models.Dojos;
+import com.jonathan.dojosandninjas.repositories.DojoRepo;
+
+
+@Service
+public class DojoService {
+	
+	private final DojoRepo dojoRepo;
+	
+	public DojoService(DojoRepo dojoRepo) {
+		this.dojoRepo = dojoRepo;
+	}
+	
+//	Create
+	public Dojos saveDojo(Dojos dojo) {
+		return dojoRepo.save(dojo);
+	}
+	
+// Find All
+	public List<Dojos> allDojo(Dojos dojo) {
+		return dojoRepo.findAll();
+	}
+
+// Find One
+	public Dojos findOneDojo(Long id) {
+		return dojoRepo.findById(id).orElse(null);
+	}
+
+// Delete
+	public void deleteDojo(Long id) {
+		dojoRepo.deleteById(id);
+	}
+}

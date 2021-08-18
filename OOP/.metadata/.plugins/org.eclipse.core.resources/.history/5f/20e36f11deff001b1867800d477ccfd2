@@ -1,0 +1,32 @@
+package com.jonathan.dojosandninjas.services;
+
+import org.springframework.stereotype.Service;
+
+import com.jonathan.dojosandninjas.models.Ninjas;
+import com.jonathan.dojosandninjas.repositories.NinjaRepo;
+
+@Service
+public class NinjaService {
+
+	private final NinjaRepo ninjaRepo;
+	
+	public NinjaService(NinjaRepo ninjaRepo) {
+		this.ninjaRepo = ninjaRepo;
+	}
+//	Create
+	public Ninjas saveNinja(Ninjas ninja) {
+		return ninjaRepo.save(ninja);
+	}
+//	Find All
+	public List<Ninjas> allNinjas() {
+		return ninjaRepo.findAll();
+	}
+//	Find One
+	public Ninjas findOneNinja(Long id) {
+		return ninjaRepo.findById(id).orElse(null);
+	}
+//	Delete
+	public void deleteNinja(Long id) {
+		ninjaRepo.deleteById(id);
+	}
+}

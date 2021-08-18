@@ -1,0 +1,11 @@
+package com.jonathan.dojoandninjas.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MainController {
+	
+	public String index() {
+		return "dojo_create.jsp";
+	}
+}

@@ -1,0 +1,23 @@
+package com.jonathan.languages.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+@Controller
+public class NinjaController {
+	@Autowired
+	private NinjaService ninjaServ;
+
+	@GetMapping("/ninjas/new")
+	public String index(@ModelAttribute("ninjaObj") Ninja ninjas) {
+		return "ninja_create.jsp";
+	}
+	
+	@PostMapping("/ninjas/new")
+	public String create(@ModelAttribute("ninjaObj") Ninja filledninjas) {
+		ninjaServ.saveNinja(filledninjas);
+		return "redirect:/ninjas/new";
+	}
+}

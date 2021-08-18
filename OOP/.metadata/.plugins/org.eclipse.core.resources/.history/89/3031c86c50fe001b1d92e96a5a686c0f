@@ -1,0 +1,17 @@
+package com.jonathan.languages.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.jonathan.languages.models.Languages;
+
+@Controller
+public class IndexController {
+	
+	@GetMapping("/")
+	public String index(@ModelAttribute("langObj")Languages emptyLanguage) {
+		return "dash.jsp";
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.jonathan.languages.controller;
+
+public class IndexController {
+
+}

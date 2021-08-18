@@ -1,0 +1,28 @@
+package com.jonathan.dojoandninjas.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.jonathan.dojosandninjas.models.Dojos;
+import com.jonathan.dojosandninjas.services.DojoService;
+
+@Controller
+public class MainController {
+	
+	@Autowired
+	private DojoService dojoServ;
+	
+	@GetMapping("/dojos/new")
+	public String index(@ModelAttribute("dojoObj") Dojos dojo) {
+		return "dojo_create.jsp";
+	}
+	@PostMapping("/dojos/new")
+	public String create(@ModelAttribute("dojoObj") Dojos filleddojo) {
+		dojoServ.saveDojo(filleddojo);
+		return "redirect:/dojos/new";
+	}
+}
