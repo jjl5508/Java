@@ -46,5 +46,4 @@ public class NinjaController {
 		ninjaServ.saveNinja(ninjaObj);
 		return "redirect:/ninjas/new";
 	}
-//	Hihi
 }
