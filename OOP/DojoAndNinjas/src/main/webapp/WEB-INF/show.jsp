@@ -12,6 +12,24 @@
 	<title>Dojo</title>
 </head>
 <body>
-
+	<h1>${onedojo.name}</h1>
+	<table class="table table-dark">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="ninjas" items="${onedojo.ninjas}">
+				<tr>
+					<td><c:out value="${ninjas.first_name}" /> </td>
+					<td><c:out value="${ninjas.last_name}" /> </td>
+					<td><c:out value="${ninjas.age}" /> </td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

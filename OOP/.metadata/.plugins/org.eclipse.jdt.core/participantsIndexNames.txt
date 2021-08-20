@@ -11,3 +11,5 @@ C:\Users\email\OneDrive\Desktop\Coding Dojo\Java\OOP\.metadata\.plugins\org.ecli
 \DojoAndFun\src\main\java
 C:\Users\email\OneDrive\Desktop\Coding Dojo\Java\OOP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1629470894.index
 \Languages\src\main\java
+C:\Users\email\OneDrive\Desktop\Coding Dojo\Java\OOP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1911193105.index
+\ProductsandCategories\src\main\java
